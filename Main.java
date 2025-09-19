@@ -2,10 +2,11 @@ import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) {
-        String nama1 = "Arief";
+        String nama1 = "Affan";
+        int a = 10;
         LocalDate tanggalLahir1 = LocalDate.of(2004, 12, 10);
 
-        String nama2 = "Radika";
+        String nama2 = "Rudi";
         LocalDate tanggalLahir2 = LocalDate.of(2004, 12, 15);
 
         
