@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
         String nama1 = "Affan";
         int a = 10;
+        int b = 66;
         LocalDate tanggalLahir1 = LocalDate.of(2004, 12, 10);
 
         String nama2 = "Rudi";
