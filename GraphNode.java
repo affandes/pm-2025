@@ -25,6 +25,7 @@ public class GraphNode {
         };
 
         List<Node> hasil = cariJalur(0, 6, edges, nodes);
+        System.out.println("Inilah hasilnya = ");
         System.out.println(hasil);
         
     }
@@ -43,7 +44,7 @@ public class GraphNode {
         // Masukkan indeks awal ke dalam antrian
         Node nodeAsal = new Node();
         nodeAsal.data = dariIndexKe;
-        nodeAsal.indeksAsal = -1;
+        nodeAsal.indeksAsal = null;
         daftarAntrian.add(nodeAsal);
 
         Node indexYangSedangDiperiksa = daftarAntrian.get(0);
@@ -69,7 +70,7 @@ public class GraphNode {
             for (Integer indeks : kotaBerelasi) {
                 Node baru = new Node();
                 baru.data = indeks.intValue();
-                baru.indeksAsal = indexYangSedangDiperiksa.data;
+                baru.indeksAsal = indexYangSedangDiperiksa;
                 daftarAntrian.add(baru);
             }
 
@@ -80,13 +81,9 @@ public class GraphNode {
         List<Node> hasilnya = new ArrayList<>();
         Node backTrack = indexYangSedangDiperiksa;
 
-        while (backTrack.indeksAsal >= 0) {
+        while (backTrack.indeksAsal != null) {
             hasilnya.add(backTrack);
-            for (Node node : daftarVisited) {
-                if (node.data == backTrack.indeksAsal) {
-                    backTrack = node;
-                }
-            }
+            backTrack = backTrack.indeksAsal;
         }
 
         // Add yang terakhir
